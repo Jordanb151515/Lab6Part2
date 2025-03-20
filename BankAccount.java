@@ -2,8 +2,9 @@
 /**
  * Write a description of class BankAccount here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jordan Byrne
+ * @version v1.0
+ * @since 3/20/25
  */
 public class BankAccount
 {
