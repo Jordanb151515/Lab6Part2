@@ -49,7 +49,8 @@ public class BankAccount
      */
     public void makeDeposit(double add)
     {
-        deposit =+ add;
+        deposit += add;
+        balance += add;
     }
 
     /**
@@ -60,7 +61,8 @@ public class BankAccount
      */
     public void makeDeposit(String add)
     {
-        deposit =+ Double.parseDouble(add);
+        deposit += Double.parseDouble(add);
+        balance += Double.parseDouble(add);
     }
     
     /**
@@ -71,7 +73,8 @@ public class BankAccount
      */
     public void makeWithdraw(double sub)
     {
-        withdraw =+ sub;
+        withdraw += sub;
+        balance -= sub;
     }
     /**
      * An example of a method - replace this comment with your own
@@ -81,6 +84,60 @@ public class BankAccount
      */
     public void makeWithdraw(String sub)
     {
-        withdraw =+ Double.parseDouble(sub);
+        withdraw += Double.parseDouble(sub);
+        balance -= Double.parseDouble(sub);
+    }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void calcInterest()
+    {
+        if (balance>0){
+         interest += (monthlyIntRate*balance);
+         balance += (monthlyIntRate*balance);
+        }
+    }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public double getBalance()
+    {
+        return balance;
+    }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public double getDeposit()
+    {
+        return deposit;
+    }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public double getWithdraw()
+    {
+        return withdraw;
+    }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public double getInterest()
+    {
+        return interest;
     }
 }
