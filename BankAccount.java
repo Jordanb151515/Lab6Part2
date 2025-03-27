@@ -1,6 +1,7 @@
 
 /**
- * Write a description of class BankAccount here.
+ * The BankAccount class includes constructors, methods for making deposits, making withdraws,
+ * calculating interest, and retriving all of these fields including the final balance. 
  *
  * @author Jordan Byrne
  * @version v1.0
@@ -8,7 +9,7 @@
  */
 public class BankAccount
 {
-    // instance variables - replace the example below with your own
+    // field variables
     private double balance;
     private double deposit;
     private double withdraw;
@@ -16,7 +17,7 @@ public class BankAccount
     private double monthlyIntRate;
 
     /**
-     * Constructor for objects of class BankAccount
+     * BankAccount constructor for no arguments. Sets interest rate to 3.5 percent.
      */
     public BankAccount()
     {
@@ -24,7 +25,9 @@ public class BankAccount
     }
 
     /**
-     * Constructor for objects of class BankAccount
+     * BankAccount constructor for console. Sets interest rate and balance.
+     * @param inBalance takes input of the starting balance.
+     * @param intRate takes input of the annual interest rate.
      */
     public BankAccount(double inBalance, double intRate)
     {
@@ -33,7 +36,9 @@ public class BankAccount
     }
 
     /**
-     * Constructor for objects of class BankAccount
+     * BankAccount constructor for GUI. Sets interest rate and balance.
+     * @param inBalance takes input of the starting balance.
+     * @param intRate takes input of the annual interest rate.
      */
     public BankAccount(String inBalance, String intRate)
     {
@@ -42,10 +47,9 @@ public class BankAccount
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method take input of the amount deposited and adds to the deposit and balance total. For console.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param add is the input of the amount being deposited. 
      */
     public void makeDeposit(double add)
     {
@@ -54,87 +58,84 @@ public class BankAccount
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method take input of the amount deposited and adds to the deposit and balance total. For GUI.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param add is the input of the amount being deposited.
      */
     public void makeDeposit(String add)
     {
         deposit += Double.parseDouble(add);
         balance += Double.parseDouble(add);
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
+     * This method accounts for withdraws. It adds to the withdraw total and subtracts from the total balance. For console.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param sub is the input for the ammount being withdrawn.
      */
     public void makeWithdraw(double sub)
     {
         withdraw += sub;
         balance -= sub;
     }
+
     /**
-     * An example of a method - replace this comment with your own
+     * This method accounts for withdraws. It adds to the withdraw total and subtracts from the total balance. For GUI.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param sub is the input for the ammount being withdrawn.
      */
     public void makeWithdraw(String sub)
     {
         withdraw += Double.parseDouble(sub);
         balance -= Double.parseDouble(sub);
     }
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * This methods calulates the interest based on the current balance.
+     * The interest gets added to the interest total and the balance total.
      */
     public void calcInterest()
     {
         if (balance>0){
-         interest += (monthlyIntRate*balance);
-         balance += (monthlyIntRate*balance);
+            interest += (monthlyIntRate*balance);
+            balance += (monthlyIntRate*balance);
         }
     }
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Method retrives the current balance.
+     * 
+     * @return balance total
      */
     public double getBalance()
     {
         return balance;
     }
+
     /**
-     * An example of a method - replace this comment with your own
+     * Method retrives the current deposit amount.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return deposit total
      */
     public double getDeposit()
     {
         return deposit;
     }
+
     /**
-     * An example of a method - replace this comment with your own
+     * Method retrives the current withdraw amount.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return withdraw total
      */
     public double getWithdraw()
     {
         return withdraw;
     }
+
     /**
-     * An example of a method - replace this comment with your own
+     * Method retrives the current interest amount.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return interest total
      */
     public double getInterest()
     {
